@@ -1,0 +1,53 @@
+// Import all of Bootstrap's CSS
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'K2D';
+    src: url('../fonts/K2D-Regular.ttf') format('embedded-opentype'), /* Internet Explorer */
+         url('../fonts/K2D-Regular.ttf') format('woff2'),             /* Super Modern Browsers */
+         url('../fonts/K2D-Regular.ttf') format('woff'),              /* Pretty Modern Browsers */
+         url('../fonts/K2D-Regular.ttf') format('truetype'),          /* Safari, Android, iOS */
+         url('../fonts/K2D-Regular.ttf') format('svg');               /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'CuteFont';
+    src: url('../fonts/CuteFont-Regular.ttf') format('embedded-opentype'), /* Internet Explorer */
+         url('../fonts/CuteFont-Regular.ttf') format('woff2'),             /* Super Modern Browsers */
+         url('../fonts/CuteFont-Regular.ttf') format('woff'),              /* Pretty Modern Browsers */
+         url('../fonts/CuteFont-Regular.ttf') format('truetype'),          /* Safari, Android, iOS */
+         url('../fonts/CuteFont-Regular.ttf') format('svg');               /* Legacy iOS */
+}
+
+body{
+    background-color:black;
+    font-family: 'K2D';
+}
+
+.contrast-green{
+    color: #05FF00;
+}
+
+.figure-font{
+    font-family: 'CuteFont';
+}
+
+.speedometer-text {
+    font-size: 90px;
+}
+
+.gauge-text {
+    font-size: 60px;
+}
+
+#revbar {
+    margin:0px;
+    background-color:red;
+    height:200px;
+    width:20%;
+}
+
+#revpointer {
+    transform-origin: 0% bottom;
+    transform: translate(175px, 19px) rotate(0);
+  }

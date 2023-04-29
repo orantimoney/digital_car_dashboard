@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-21",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0",
+    "http": "0.0.1-security",
+    "parcel": "^2.8.2",
+    "pocket-sockets": "^2.0.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.5.4",
+    "telnet-client": "^2.0.6"
+  },
+  "name": "digital-car-dashboard-demo",
+  "version": "1.0.0",
+  "source": "./src/index.html",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^5.7.1",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "timers-browserify": "^2.0.12",
+    "url": "^0.11.0",
+    "util": "^0.12.5"
+  },
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "description": ""
+}
