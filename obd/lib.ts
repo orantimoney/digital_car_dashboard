@@ -4,7 +4,7 @@ by either the client or server, and determine the command in a human readable fo
 according to the OBDII standard set by ISO/California Air Board/EU Directives
 */
 
-SpliceCommand('010B')
+SpliceCommand('010B');
 
 interface Command {
     service: number;
