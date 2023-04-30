@@ -24,7 +24,7 @@ var util = require('util');
  * obdInfo.js for all PIDS.
  * @type {*}
  */
-var PIDS = require('../lib/obdInfo.js');
+var PIDS = require('./obdInfo.js');
 
 /**
  * Constant for defining delay between writes.
@@ -214,7 +214,7 @@ OBDReader.prototype.connect = function (address, channel) {
     btSerial.connect(address, channel, function () {
         self.connected = true;
 
-        self.write('ATZ');
+       // self.write('ATZ');
         //Turns off extra line feed and carriage return
         self.write('ATL0');
         //This disables spaces in in output, which is faster!

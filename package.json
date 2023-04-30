@@ -1,22 +1,23 @@
 {
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
-    "@popperjs/core": "^2.11.6",
+    "@popperjs/core": "^2.11.7",
+    "bluetooth-serial-port": "^3.0.2",
     "bootstrap": "^5.2.0",
     "http": "0.0.1-security",
-    "parcel": "^2.8.2",
+    "parcel": "^2.8.3",
     "pocket-sockets": "^2.0.0",
     "promise-queue": "^2.2.5",
     "socket.io": "^4.6.1",
-    "socket.io-client": "^4.5.4",
-    "telnet-client": "^2.0.6",
+    "socket.io-client": "^4.6.1",
+    "telnet-client": "^2.0.8",
     "winston": "^3.8.2"
   },
   "name": "digital-car-dashboard-demo",
   "version": "1.0.0",
   "source": "./src/index.html",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.3",
     "assert": "^2.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^5.7.1",

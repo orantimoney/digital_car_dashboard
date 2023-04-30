@@ -73,7 +73,7 @@ class Obd {
 
     getRPM() {
         return new Promise((resolve, reject) => {
-            this._write(new Buffer.from([0105])).then((response) => {
+            this._write(new Buffer.from()).then((response) => {
                 resolve(response.toString("utf8"));
             });
         });
