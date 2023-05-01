@@ -2,8 +2,9 @@
   "dependencies": {
     "@abandonware/noble": "^1.9.2-21",
     "@popperjs/core": "^2.11.7",
-    "bluetooth-serial-port": "^3.0.2",
+    "bluetooth-serial-port": "file:external_libraries/node-bluetooth-serial-port",
     "bootstrap": "^5.2.0",
+    "dotenv": "^16.0.3",
     "http": "0.0.1-security",
     "parcel": "^2.8.3",
     "pocket-sockets": "^2.0.0",

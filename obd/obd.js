@@ -15,6 +15,15 @@
  * Author: Eric Smekens
  */
 
+/*
+Originally  retrieved from https://github.com/EricSmekens/node-bluetooth-obd
+
+ - node-bluetooth-obd/lib/obd.js
+
+Adapted and modified by Oran Timoney for use in the Digital Car Dashboard project.
+Currently updated for use with Node 16
+*/
+
 'use strict';
 //Used for event emitting.
 var EventEmitter = require('events').EventEmitter;

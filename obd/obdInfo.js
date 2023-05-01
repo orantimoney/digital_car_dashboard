@@ -14,6 +14,16 @@
  * (C) Copyright 2013, TNO
  * Author: Eric Smekens
  */
+
+/* 
+Originally  retrieved from https://github.com/EricSmekens/node-bluetooth-obd
+
+ - node-bluetooth-obd/lib/obdInfo.js
+
+Adapted and modified by Oran Timoney for use in the Digital Car Dashboard project.
+Currently updated for use with Node 16
+*/
+
 'use strict';
 
 function checkHex(n){

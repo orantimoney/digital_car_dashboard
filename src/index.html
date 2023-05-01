@@ -5,53 +5,14 @@
     <meta name="viewport">
     <title>Bootstrap w/ Parcel</title>
     <link rel="stylesheet" href="./assets/scss/main.scss">
-    <script type="module" src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/dashboard.js"></script>
   </head>
   <body>
-    <div class="container border">
+    
       <div class="row g-3">
-        <div class="col-4">
-          <div class="p-2 border bg-dark">
-            <object id="mil" type="image/svg+xml" data="assets/image/icons/mil.svg"></object>
-            <object id="fuel" type="image/svg+xml" data="assets/image/icons/fuel.svg"></object>
-          </div>
-          <div class="p-3 border bg-dark">
-            <object id="oilpressure" type="image/svg+xml" data="assets/image/icons/oilpressure.svg"></object>
-            <object id="coolant" type="image/svg+xml" data="assets/image/icons/coolant.svg"></object>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 border text-center">
-            <h1 id="speed" class="text-light figure-font speedometer-text">0</h1>
-            <h1 class="contrast-green">MPH</h1>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 border text-center">
-            <h1 class="text-light">Coolant Temp</h1>
-            <h1 id="cooltemp" class="contrast-green figure-font gauge-text">0°C</h1>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-3"></div>
-        </div>
-        <div class="col-4">
-          <div class="p-3"></div>
-        </div>
-        <div class="col-4">
-          <div class="p-3 border text-center">
-            <h1 class="text-light">Manifold Pressure</h1>
-            <h1 id="manip" class="contrast-green figure-font gauge-text">0.0 BAR</h1>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-5">
-          </div>
-        <div class="col" style="height: 300px">
-          <div class="p-1 border text-center">
-            <div id ="revbar" class="revbar contrast-green"></div>
-          </div>
-        </div>
+        <object id="dashboard" type="image/svg+xml" data="assets/image/dashboard/dashboard1.svg"></object>
+      </div>
+      <div class="container">
         <div class="row g-3">
         <div class="col-2">
           <div class="p-2 border text-center">
@@ -60,17 +21,13 @@
         </div>
         <div class="col-2">
           <div class="p-2 border text-center">
-            <h1 class="text-light">Logs</h1>
+            <h1 class="text-light"><a href="logs.html">Logs</a></h1>
           </div>
         </div>
         <div class="col-2">
           <div class="p-2 border text-center">
             <h1 class="text-light"><a href="diag.html">Diag</a></h1>
           </div>
-          <div class="col-2">
-            <div class="p-2 border text-center">
-              <h1 class="text-light"><a href="dashboard.html">Dashboard</a></h1>
-            </div>
         </div>
         </div>
       </div>

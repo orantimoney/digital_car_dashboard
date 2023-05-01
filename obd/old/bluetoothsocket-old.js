@@ -1,3 +1,5 @@
+// adapted from https://stackoverflow.com/questions/72260251/noble-ble-in-node-js-sometimes-works-sometimes-doesnt
+// and modified for device discovery by oran timoney
 // Device name VEEPEAK - for demonstration purposes
 
 var noble = require('@abandonware/noble');
@@ -34,11 +36,6 @@ noble.on('discover', function(peripheral) {
         console.log('\n\n\n FOUND ********* \n\n\n')
         noble.stopScanning();
         peripheral.connect(function(device) {
-<<<<<<< Updated upstream
-          btSerialConnection = new(require('bluetooth-serial-port')).BluetoothSerialPort();
-	  found = true;
-=======
->>>>>>> Stashed changes
         });
       }
 
