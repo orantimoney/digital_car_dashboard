@@ -8,7 +8,6 @@ const socket = io(URL, { autoConnect: true});
 
 
 
-
 socket.on("mph", (mph) => {
     console.log(mph);
     document.getElementById('speed').innerText = mph;

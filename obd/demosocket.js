@@ -35,7 +35,7 @@ setInterval(function () {
     io.emit('coolanttemp', temp);
     var rpm = Math.random() * 6000;
     rpm = Math.round(rpm);
-    io.emit('revcounter', rpm);
+    io.emit('rpm', rpm);
     var manipressure = Math.random() * 3;
     manipressure = Math.round(manipressure * 10) / 10;
     io.emit('manipressure', manipressure);

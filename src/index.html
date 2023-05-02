@@ -3,40 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <title>Bootstrap w/ Parcel</title>
+    <title>Digital Car Dashboard</title>
     <link rel="stylesheet" href="./assets/scss/main.scss">
     <script type="module" src="./assets/js/dashboard.js"></script>
   </head>
-  <body>
-    
-      <div class="row g-3">
-        <object id="dashboard" type="image/svg+xml" data="assets/image/dashboard/dashboard1.svg"></object>
-      </div>
-      <div class="container">
-        <div class="row g-3">
-        <div class="col-2">
-          <div class="p-2 border text-center">
-            <h1 class="text-light"><a href="settings.html">Settings</a></h1>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="p-2 border text-center">
-            <h1 class="text-light"><a href="logs.html">Logs</a></h1>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="p-2 border text-center">
-            <h1 class="text-light"><a href="diag.html">Diag</a></h1>
-          </div>
-        </div>
-        </div>
-      </div>
+
+  <body id="no-overflow">
+    <div class="row g-3">
+      <object id="dashboard" type="image/svg+xml" data="assets/image/dashboard/dashboard1.svg"></object>
     </div>
+      <div class="row g-3 bottom-nav">
+        <div class="col-4">
+          <a href="settings.html">
+            <div class="p-2 nav-button-left text-center">
+              <h1 class="bottom-nav-link">Settings</h1>
+            </div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="logs.html">
+            <div class="p-2 text-center">
+              <h1 class="bottom-nav-link">Logs</h1>
+            </div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="diag.html">
+            <div class="p-2 nav-button-right text-center">
+              <h1 class="bottom-nav-link">Diagnostics</h1>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>    
   </body>
-  <script type="module">
-    
-
-
-
+  <script type="module">  
   </script>
 </html>

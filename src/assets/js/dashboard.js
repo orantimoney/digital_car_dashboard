@@ -41,17 +41,15 @@ socket.on("mph", (mph) => {
     mphpointer.setAttribute("transform", "rotate(" + mphAngle +",214,258)");
 });
 
-socket.on("retrievespeed", (mph) => {
-    //console.log(mph);
-   // document.getElementById('speed').innerText = mph;
-});
 
 socket.on("coolanttemp", (temp) => {
-    //console.log(temp);
-    //document.getElementById('cooltemp').innerText = temp + '°C';
+    console.log(temp);
+    dashref = document.getElementById('dashboard');
+    dashboard = dashref.contentDocument;  
+    coolantTemp = dashboard.getElementById('cooltemp').textContent = temp + '°C';
 });
 
-socket.on("revcounter", (rpm) => {
+socket.on("rpm", (rpm) => {
     console.log(rpm + ' - rpm');
     rpmAngle = calculateDialNeedleAngle(rpm, 0, 6000, 270);
     dashref = document.getElementById('dashboard');
@@ -61,8 +59,10 @@ socket.on("revcounter", (rpm) => {
 });
 
 socket.on("manipressure", (bar) => {
-    //console.log(bar);
-   // document.getElementById('manip').innerText = bar + ' BAR';
+    console.log(bar);
+    dashref = document.getElementById('dashboard');
+    dashboard = dashref.contentDocument; 
+   dashboard.getElementById('manifoldpressure').textContent = bar + ' BAR';
 });
 
 

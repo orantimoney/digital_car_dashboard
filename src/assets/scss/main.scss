@@ -40,6 +40,29 @@ body{
     font-size: 60px;
 }
 
+.nav-button-left {
+    border-right: white solid;
+}
+
+.nav-button-right {
+    border-left: white solid;
+}
+
+.bottom-nav {
+    background: #0b141a;
+}
+
+a {
+    text-decoration:none
+}
+
+
+.bottom-nav-link {
+    color: #5cff00;
+    text-decoration-line: underline;
+}
+
+
 #revbar {
     margin:0px;
     background-color:red;
@@ -51,3 +74,7 @@ body{
     transform-origin: 0% bottom;
     transform: translate(175px, 19px) rotate(0);
   }
+
+  #no-overflow{
+    overflow: hidden;
+}
