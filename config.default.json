@@ -1,0 +1,7 @@
+{
+  "Settings": {
+    "hostname": "http://localhost:3000/",
+    "devicename": "VEEPEAK",
+    "connectiontype": "bluetooth"
+  }
+}

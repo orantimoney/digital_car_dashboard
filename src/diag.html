@@ -10,9 +10,62 @@
   <body>
     <div class="container border">
         <h1 class="text-light text-center p-3">Diagnostic Trouble Codes</h1>
-        <table>
-            
-        </table>
+    </div>
+    <div class="container border mt-3">
+      <table class="table" id="diag">
+        <thead class="">
+          <tr>
+            <th class="text-light"><h3>Type of Problem</h2></th>
+            <th class="text-light"><h3>Diagnostic Trouble Code & Description of Problem</h3></th>
+            <th class="text-light"><h3>Action</h3></th>
+          </tr>
+          <tr>
+            <td>
+              <span>
+                <img src="/src/assets/image/icons/mil.svg"> 
+                <h3 class="text-light">Engine</h3>
+              </span>
+            </td>
+            <td>
+              <span class="text-light">
+                <h4> P0171 - System too Lean (Bank 1)</h4>
+                <span> 
+                  Too lean condition within the Exhaust
+                  located at the Bank 1 Oxygen Sensor
+                </span>
+              </span>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary btn-lg">Clear</button>
+            </td>
+          </tr>
+        </thead>
+    </table>
     </div>
   </body>
+  <footer class="fixed-bottom">
+    <div class="row g-3 bottom-nav">
+      <div class="col-4">
+        <a href="index.html">
+          <div class="p-2 nav-button-left text-center">
+            <h1 class="bottom-nav-link">Dashboard</h1>
+          </div>
+        </a>
+      </div>
+      <div class="col-4">
+        <a href="logs.html">
+          <div class="p-2  text-center">
+            <h1 class="bottom-nav-link">Logs</h1>
+          </div>
+        </a>
+      </div>
+      <div class="col-4">
+        <a href="settings.html">
+          <div class="p-2 nav-button-right text-center">
+            <h1 class="bottom-nav-link">Settings</h1>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
 </html>
