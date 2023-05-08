@@ -17,9 +17,7 @@ httpServer.listen(3000);
 
 var date = Date.UTC().toString;
 
-var logs = fs.createWriteStream('../logs' + date, {
-  flags: 'a' // 'a' means appending (old data will be preserved)
-})
+var logs = fs.createWriteStream('../logs' + date, {flags: 'a'});
 
 
 btOBDReader.on('connected', function () {
