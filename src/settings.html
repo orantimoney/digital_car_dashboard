@@ -32,7 +32,8 @@
           </div>
           </h3>
       </form>
-      <button id="sddt" class="btn btn-lg btn-primary" type="button">Submit</button>
+      <button id="submission" class="btn btn-lg btn-primary" type="button">Submit</button>
+      <button id="default" class="btn btn-lg btn-primary" type="button">Defaults</button>
     </div>
   </body>
   <footer class="fixed-bottom">
@@ -73,25 +74,39 @@
     console.log(JSON.parse(config));
 
     var data = JSON.parse(config);
+    var defaultData = JSON.parse(defaultconfig);
 
     document.getElementById('hostname').value = data.hostname;
     document.getElementById('devicename').value = data.devicename;
     document.getElementById('connectiontype').value = data.connectiontype;
 
-    document.getElementById("sddt").onclick = function() { submit(); };
+    document.getElementById("submission").onclick = function() { submit(false); };
+    document.getElementById("default").onclick = function() { submit(true); };
+    
 
 
-    function submit(){
+
+    function submit(isDefault){
       console.log('submission');
+      
       var hostname = document.getElementById('hostname').value;
       var devicename = document.getElementById('devicename').value;
       var connectiontype = document.getElementById('connectiontype').value;
 
-      var outputJson = {
-        "hostname": hostname,
-        "devicename": devicename,
-        "connectiontype": connectiontype
-      };
+      if (!isDefault) {
+        var outputJson = {
+          "hostname": hostname,
+          "devicename": devicename,
+          "connectiontype": connectiontype
+        };
+      } else {
+        var outputJson = {
+          "hostname": defaultData.hostname,
+          "devicename": defaultData.devicename,
+          "connectiontype": defaultData.connectiontype
+        };
+      }
+
 
       socket.emit('settings', outputJson);  
     }
