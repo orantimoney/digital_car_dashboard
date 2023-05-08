@@ -13,16 +13,18 @@ httpServer.listen(3000);
 
 console.log('test');
 
-io.on("connection", function (socket) {
-    console.log("connection established")
-});
+io.on('connection', (socket) => {
 
-io.on("settingsChange", (outputJson) => {
-    console.log(outputJson);
-    fs.writeFile(__dirname + "/../config-test2.json", outputJson , function(err) {
+  socket.on('settings', (outputJson) => {
+    console.log('\n\n\n\n\n TEST');
+    
+    outputJson = JSON.stringify(outputJson);
+    fs.writeFile(__dirname + "/../config.json", outputJson , function(err) {
         if(err) {
             return console.log(err);
         }
         console.log("The file was saved!");
     }); 
+});
+
 });

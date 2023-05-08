@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.9 on darwin)" generated="20230505 23:54:15.667" rpa="false" schemaversion="3">
+<suite id="s1" name="Sitecheck" source="/Users/orantimoney/Desktop/digital_car_dashboard/robotframework/Sitecheck.robot">
+<kw name="Setup Dashboard" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230505 23:54:16.098" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "/Users/orantimoney/Desktop/digital_car_dashboard/robotframework/browser/traces/4cd70bb7-be1b-4137-8104-9c08b062695b"}</msg>
+<msg timestamp="20230505 23:54:16.369" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"/Users/orantimoney/Desktop/digital_car_dashboard/robotframework/browser/traces/4cd70bb7-be1b-4137-8104-9c08b062695b"}</msg>
+<status status="PASS" starttime="20230505 23:54:16.098" endtime="20230505 23:54:16.370"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20230505 23:54:16.370" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20230505 23:54:16.386" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230505 23:54:16.386" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'width': 1920, 'height': 1080}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20230505 23:54:16.370" endtime="20230505 23:54:16.386"/>
+</kw>
+<kw name="New Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230505 23:54:16.701" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<status status="PASS" starttime="20230505 23:54:16.386" endtime="20230505 23:54:16.701"/>
+</kw>
+<kw name="Go To" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20230505 23:54:16.753" level="INFO">Successfully opened URL http://localhost:1234/index.html</msg>
+<status status="PASS" starttime="20230505 23:54:16.701" endtime="20230505 23:54:16.753"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<arg>2s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230505 23:54:16.753" endtime="20230505 23:54:17.260"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:16.097" endtime="20230505 23:54:17.261"/>
+</kw>
+<test id="s1-t1" name="Main Page Loads" line="10">
+<kw name="New Page" library="Browser">
+<arg>http://localhost:1234/index.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230505 23:54:17.387" level="INFO">Successfully initialized new page object and opened url: http://localhost:1234/index.html</msg>
+<status status="PASS" starttime="20230505 23:54:17.276" endtime="20230505 23:54:17.387"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>Digital Car Dashboard</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230505 23:54:17.391" level="INFO">Title: 'Digital Car Dashboard'</msg>
+<status status="PASS" starttime="20230505 23:54:17.387" endtime="20230505 23:54:17.391"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:17.261" endtime="20230505 23:54:17.391"/>
+</test>
+<test id="s1-t2" name="Go to Settings" line="14">
+<kw name="Click" library="Browser">
+<arg>xpath=/html/body/div[2]/div[1]/a/div/h1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230505 23:54:17.438" endtime="20230505 23:54:17.504"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<arg>2s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230505 23:54:17.504" endtime="20230505 23:54:18.028"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>Settings5</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230505 23:54:19.044" level="INFO">Title: 'Settings'</msg>
+<msg timestamp="20230505 23:54:19.199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230505 23:54:19.199" level="FAIL">Title 'Settings' (str) should be 'Settings5' (str)</msg>
+<status status="FAIL" starttime="20230505 23:54:18.028" endtime="20230505 23:54:19.202"/>
+</kw>
+<status status="FAIL" starttime="20230505 23:54:17.433" endtime="20230505 23:54:19.202">Title 'Settings' (str) should be 'Settings5' (str)</status>
+</test>
+<test id="s1-t3" name="Assert Settings Table Exists" line="19">
+<kw name="Get Text" library="Browser">
+<arg>xpath=/html/body/div[2]/form/h2</arg>
+<arg>==</arg>
+<arg>Settings for Device Connection</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230505 23:54:19.224" level="INFO">Text: 'Settings for Device Connection'</msg>
+<status status="PASS" starttime="20230505 23:54:19.206" endtime="20230505 23:54:19.224"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.205" endtime="20230505 23:54:19.225"/>
+</test>
+<test id="s1-t4" name="Go To Logs" line="22">
+<kw name="Click" library="Browser">
+<arg>xpath=/html/body/footer/div/div[2]/a/div/h1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230505 23:54:19.229" endtime="20230505 23:54:19.274"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>Logs</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230505 23:54:19.285" level="INFO">Title: 'Logs'</msg>
+<status status="PASS" starttime="20230505 23:54:19.274" endtime="20230505 23:54:19.285"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.227" endtime="20230505 23:54:19.285"/>
+</test>
+<test id="s1-t5" name="Check Logs Table Exists" line="26">
+<kw name="Get Text" library="Browser">
+<arg>xpath=/html/body/div[2]/form/h2</arg>
+<arg>==</arg>
+<arg>Select Log File</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230505 23:54:19.305" level="INFO">Text: 'Select Log File'</msg>
+<status status="PASS" starttime="20230505 23:54:19.290" endtime="20230505 23:54:19.305"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.288" endtime="20230505 23:54:19.305"/>
+</test>
+<test id="s1-t6" name="Go To Diagnostics" line="29">
+<kw name="Click" library="Browser">
+<arg>xpath=/html/body/footer/div/div[3]/a/div/h1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230505 23:54:19.311" endtime="20230505 23:54:19.354"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.309" endtime="20230505 23:54:19.354"/>
+</test>
+<test id="s1-t7" name="Check Diagnostics Table Exists" line="32">
+<kw name="Get Text" library="Browser">
+<arg>xpath=/html/body/div[2]/table/thead/tr[1]/th[1]/h3</arg>
+<arg>==</arg>
+<arg>Type of Problem</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230505 23:54:19.376" level="INFO">Text: 'Type of Problem'</msg>
+<status status="PASS" starttime="20230505 23:54:19.359" endtime="20230505 23:54:19.376"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=/html/body/div[2]/table/thead/tr[1]/th[2]/h3</arg>
+<arg>==</arg>
+<arg>Diagnostic Trouble Code &amp; Description of Problem</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230505 23:54:19.382" level="INFO">Text: 'Diagnostic Trouble Code &amp; Description of Problem'</msg>
+<status status="PASS" starttime="20230505 23:54:19.376" endtime="20230505 23:54:19.383"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=/html/body/div[2]/table/thead/tr[1]/th[3]/h3</arg>
+<arg>==</arg>
+<arg>Action</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230505 23:54:19.388" level="INFO">Text: 'Action'</msg>
+<status status="PASS" starttime="20230505 23:54:19.383" endtime="20230505 23:54:19.388"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.358" endtime="20230505 23:54:19.388"/>
+</test>
+<test id="s1-t8" name="Return To Dashboard" line="37">
+<kw name="Click" library="Browser">
+<arg>xpath=/html/body/footer/div/div[1]/a/div/h1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230505 23:54:19.393" endtime="20230505 23:54:19.437"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>Digital Car Dashboard</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230505 23:54:19.451" level="INFO">Title: 'Digital Car Dashboard'</msg>
+<status status="PASS" starttime="20230505 23:54:19.437" endtime="20230505 23:54:19.451"/>
+</kw>
+<status status="PASS" starttime="20230505 23:54:19.391" endtime="20230505 23:54:19.451"/>
+</test>
+<status status="FAIL" starttime="20230505 23:54:15.668" endtime="20230505 23:54:19.455"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="1" skip="0" id="s1" name="Sitecheck">Sitecheck</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

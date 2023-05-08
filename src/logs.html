@@ -3,16 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <title>Bootstrap w/ Parcel</title>
+    <title>Logs</title>
     <link rel="stylesheet" href="./assets/scss/main.scss">
     <script type="module" src="./assets/js/main.js"></script>
   </head>
   <body>
     <div class="container border">
         <h1 class="text-light text-center p-3">Logs</h1>
-        <table>
-            
-        </table>
+    </div>
+    <div class="container border mt-3">
+      <form id="log">
+          <h2 class="text-light text-center"> Select Log File</h2>
+          <h3>
+          <div class="mt-3">
+            <label class="text-light mt-2 me-4" for="connectiontype">Log File</label>
+            <select id="connectiontype" name="connectiontype">
+              <option value="Test1">Test 1</option>
+              <option value="Test2">Test 2</option>
+              <option value="Test3">Test 3</option>
+            </select>
+          </div>
+          <div class="mt-5">
+            <button class="btn btn-lg btn-primary" onClick="submit()">View</button>
+          </div>
+          </h3>
+      </form>
     </div>
   </body>
   <footer class="fixed-bottom">

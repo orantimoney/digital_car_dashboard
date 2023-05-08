@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <title>Bootstrap w/ Parcel</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="./assets/scss/main.scss">
     <script type="module" src="./assets/js/settings.js"></script>
   </head>
@@ -30,12 +30,11 @@
             </select>
           </div>
           <div class="mt-5">
-            <button class="btn btn-lg btn-primary" onClick="submit()">Submit</button>
           </div>
           </h3>
       </form>
+      <button id="sddt" class="btn btn-lg btn-primary" type="button">Submit</button>
     </div>
-    <button class="btn btn-lg btn-primary" id ='sddt' >Sddt</button>
   </body>
   <footer class="fixed-bottom">
     <div class="row g-3 bottom-nav">
@@ -62,4 +61,40 @@
       </div>
     </div>
   </footer>
+  <script type="module">
+    import fs from 'fs';
+    import { io } from "socket.io-client";
+
+    const URL = "http://localhost:3000/";
+    const socket = io(URL, { autoConnect: true});
+
+    const config = fs.readFileSync(__dirname + '/../config.json', 'utf8');
+    const defaultconfig = fs.readFileSync(__dirname + '/../config.default.json', 'utf8');
+
+    console.log(JSON.parse(config));
+
+    var data = JSON.parse(config);
+
+    document.getElementById('hostname').value = data.hostname;
+    document.getElementById('devicename').value = data.devicename;
+    document.getElementById('connectiontype').value = data.connectiontype;
+
+    document.getElementById("sddt").onclick = function() { submit(); };
+
+
+    function submit(){
+      console.log('submission');
+      var hostname = document.getElementById('hostname').value;
+      var devicename = document.getElementById('devicename').value;
+      var connectiontype = document.getElementById('connectiontype').value;
+
+      var outputJson = {
+        "hostname": hostname,
+        "devicename": devicename,
+        "connectiontype": connectiontype
+      };
+
+      socket.emit('settings', outputJson);  
+    }
+  </script>
 </html>

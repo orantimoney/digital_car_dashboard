@@ -17,14 +17,27 @@ function calculateDialNeedlePosition
 @return int NeedleAngle
 */
 function calculateDialNeedleAngle(value, dialStart, dialEnd, sectionAngle) {
-dialTravel = Math.abs(dialStart) + Math.abs(dialEnd);
 
-needlePercentage = (dialTravel/value);
+needlePercentage = calculateMeasurePercentage(value, dialStart, dialEnd);
 
 needleAngle = 1/(needlePercentage)*sectionAngle;
 
 return needleAngle;
 
+}
+
+
+// calculates the percentage of a measure e.g. dial, or bar will be covered by the value given
+function calculateMeasurePercentage(value, minvalue, maxvalue) {
+    measureTravel = Math.abs(minvalue) + Math.abs(maxvalue);
+
+    if (minvalue < 0 && value > 0) {
+        value += Math.abs(minvalue);
+    }
+
+    measurePercentage = (measureTravel/Math.abs(value));
+
+    return measurePercentage;
 }
 
 

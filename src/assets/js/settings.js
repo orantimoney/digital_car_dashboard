@@ -1,4 +1,4 @@
-import fs from 'fs';
+/*import fs from 'fs';
 
 import 'bootstrap';
 
@@ -17,10 +17,6 @@ console.log(JSON.parse(config));
 
 var data = JSON.parse(config);
 
-console.log(data.hostname);
-console.log(data.devicename);
-console.log(data.connectiontype);
-
 document.getElementById('hostname').value = data.hostname;
 document.getElementById('devicename').value = data.devicename;
 document.getElementById('connectiontype').value = data.connectiontype;
@@ -28,20 +24,8 @@ document.getElementById('connectiontype').value = data.connectiontype;
 const form = document.getElementById("settings");
 document.getElementById("sddt").addEventListener("click", submit());
 
-socket.on("connection", function (socket) {
-    console.log('connected');
-    var hostname = document.getElementById('hostname').value;
-    var devicename = document.getElementById('devicename').value;
-    var connectiontype = document.getElementById('connectiontype').value;
-
-    var outputJson = {
-        "hostname": hostname,
-        "devicename": devicename,
-        "connectiontype": connectiontype
-    };
-
-    socket.emit('settingsChange', outputJson);
-});
+socket.emit('test');
+socket.emit"
 
 function submit(){
     console.log('submission');
@@ -55,6 +39,7 @@ function submit(){
         "connectiontype": connectiontype
     };
 
-    socket.emit('settingsChange', outputJson);
+    socket.emit('settings', outputJson);
         
 }
+*/

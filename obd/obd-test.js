@@ -5,6 +5,7 @@ var dataReceivedMarker = {};
 var http = require("http");
 var socket_io = require("socket.io");
 var httpServer = (0, http.createServer)();
+var fs = require('fs')
 
 var io = new socket_io.Server(httpServer, {
     cors: {
@@ -13,6 +14,12 @@ var io = new socket_io.Server(httpServer, {
 });
 
 httpServer.listen(3000);
+
+var date = Date.UTC().toString;
+
+var logs = fs.createWriteStream('../logs' + date, {
+  flags: 'a' // 'a' means appending (old data will be preserved)
+})
 
 
 btOBDReader.on('connected', function () {
@@ -31,6 +38,7 @@ const kpatoBarCoefficient = 100 // 100 kpa = 1 bar
 btOBDReader.on('dataReceived', function (data) {
     console.log(data);
     dataReceivedMarker = data;
+    logs.write(data);
 
     switch (data['name']) {
     case("vss"):
