@@ -39,7 +39,7 @@ btOBDReader.on('dataReceived', function (data) {
 	data['date'] = date;
 	console.log(data);
  	var json = JSON.stringify(data);
-	logs.write(json + "");
+	logs.write(json + "\n");
 
     switch (data['name']) {
     case("vss"):
