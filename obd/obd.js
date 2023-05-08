@@ -62,6 +62,7 @@ OBDReader = function () {
     this.connected = false;
     this.receivedData = "";
     this.protocol = '0' ;
+    this.date = Date.UTC.toString();
     return this;
 };
 util.inherits(OBDReader, EventEmitter);

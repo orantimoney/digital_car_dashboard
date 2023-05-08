@@ -15,9 +15,9 @@ var io = new socket_io.Server(httpServer, {
 
 httpServer.listen(3000);
 
-var date = Date.UTC().toString;
+var date = new Date();
 
-var logs = fs.createWriteStream('../logs' + date, {flags: 'a'});
+var logs = fs.createWriteStream('../logs/' + 'test.txt' , {flags: 'a'});
 
 
 btOBDReader.on('connected', function () {
@@ -34,22 +34,25 @@ const mphConversionCoefficient = 1.609; // divide km/h by 1.609 for mph
 const kpatoBarCoefficient = 100 // 100 kpa = 1 bar
 
 btOBDReader.on('dataReceived', function (data) {
-    console.log(data);
     dataReceivedMarker = data;
-    logs.write(data);
+	date = new Date();
+	data['date'] = date;
+	console.log(data);
+ 	var json = JSON.stringify(data);
+	logs.write(json + "");
 
     switch (data['name']) {
     case("vss"):
-        io.emit("mph", data["convertToUseful"]/mphConversionCoefficient);
+        io.emit("mph", data["value"]/mphConversionCoefficient);
         return
     case("rpm"):
-        io.emit("rpm", data["convertToUseful"]);
+        io.emit("rpm", data["value"]);
         return
     case("temp"):
-        io.emit("coolanttemp", data["convertToUseful"]);
+        io.emit("coolanttemp", data["value"]);
         return;
     case("map"):
-        io.emit("manipressure", data["convertToUseful"]/kpatoBarCoefficient)
+        io.emit("manipressure", data["value"]/kpatoBarCoefficient)
         return
     default:
         console.log('invalid headers!');
