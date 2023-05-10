@@ -60,5 +60,4 @@ btOBDReader.on('dataReceived', function (data) {
     }
 });
 
-// Use first device with 'obd' in the name
 btOBDReader.autoconnect('VEEPEAK');

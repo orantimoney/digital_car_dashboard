@@ -1,0 +1,12 @@
+{"date":"2023-04-07T03:24:00", "mode":"41", "pid":"0D", "name":"vss", "value":"850" }
+{"date":"2023-04-07T03:24:01", "mode":"41", "pid":"0D", "name":"vss", "value":"900" }
+{"date":"2023-04-07T03:24:02", "mode":"41", "pid":"0D", "name":"vss", "value":"950" }
+{"date":"2023-04-07T03:24:03", "mode":"41", "pid":"0D", "name":"vss", "value":"1000" }
+{"date":"2023-04-07T03:24:04", "mode":"41", "pid":"0D", "name":"vss", "value":"1050" }
+{"date":"2023-04-07T03:24:05", "mode":"41", "pid":"0D", "name":"vss", "value":"1100" }
+{"date":"2023-04-07T03:24:06", "mode":"41", "pid":"0D", "name":"vss", "value":"1150" }
+{"date":"2023-04-07T03:24:07", "mode":"41", "pid":"0D", "name":"vss", "value":"1200" }
+{"date":"2023-04-07T03:24:08", "mode":"41", "pid":"0D", "name":"vss", "value":"1250" }
+{"date":"2023-04-07T03:24:09", "mode":"41", "pid":"0D", "name":"vss", "value":"1300" }
+{"date":"2023-04-07T03:24:10", "mode":"41", "pid":"0D", "name":"vss", "value":"1100" }
+{"date":"2023-04-07T03:24:11", "mode":"41", "pid":"0D", "name":"vss", "value":"900" }

@@ -5,7 +5,6 @@
     <meta name="viewport">
     <title>Logs</title>
     <link rel="stylesheet" href="./assets/scss/main.scss">
-    <script type="module" src="./assets/js/main.js"></script>
   </head>
   <body>
     <div class="container border">
@@ -28,9 +27,12 @@
           </div>
           </h3>
       </form>
+      <div style="background-color: white;" class="p-4">
+        <canvas id="myChart" style="background-color: white";></canvas>
+      </div>
     </div>
   </body>
-  <footer class="fixed-bottom">
+  <footer class="bottom">
     <div class="row g-3 bottom-nav">
       <div class="col-4">
         <a href="index.html">
@@ -55,4 +57,44 @@
       </div>
     </div>
   </footer>
+  <script type = 'module'> 
+  import Chart from 'chart.js/auto';
+
+  import fs from 'fs';
+  
+  const testfile = fs.readFileSync(__dirname + '/../logs/test.txt', 'utf8');
+
+  var rows = testfile.split("\n");
+
+  var data = [];
+
+  for (var i in rows) {
+    var record = JSON.parse(rows[i]);
+    record['date'] = record.date;
+    record['name'] = record.name;
+    record['value'] = record.value
+    data.push(record);
+  } 
+
+  console.log(data);
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [{
+        label: 'RPM over time (sample data)',
+        data: data,
+        borderWidth: 1
+      }]
+    },
+    options: {
+    parsing: {
+      xAxisKey: 'date',
+      yAxisKey: 'value'
+    }
+  }
+  });
+  </script>
 </html>
